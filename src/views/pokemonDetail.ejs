@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="/img/icon.png">
+    <title>Mini Pokedex</title>
+</head>
+
+<body>
+    <header>
+        <h1>Mini Pokedex Shiny</h1>
+    </header>
+    <main>
+        <h2>Resultado:</h2>
+        <div class="container-result">
+            <label>Nombre: <%= pokemon.name %></label>
+            <label>Número: <%= pokemon.id %></label>
+            <label>Tipo(s): </label>
+            <ul>
+                <% pokemon.type.forEach(item=> { %>
+                    <li>
+                        <%= item.type.name %>
+                    </li>
+                    <% }) %>
+            </ul>
+            <label>Peso: <%= pokemon.weight %></label>
+            <label>Altura: <%= pokemon.height %></label>
+            <img src="<%= pokemon.image %>" alt="<%= pokemon.name %>">
+        </div>
+        <a href="/">Volver</a>
+    </main>
+    <footer>
+        <label>Hecho por Carlos Lavado.</label>
+    </footer>
+</body>
+
+</html>
